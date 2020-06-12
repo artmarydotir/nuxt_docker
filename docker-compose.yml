@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  nuxt:
+    image: mynuxt
+    container_name: mynuxt-cont
+    restart: always
+    command:
+      "npm run start"
+    networks:
+      - frontnet
+
+  nginx:
+    image: nginx:1
+    container_name: mynuxt-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx:ro
+    depends_on:
+      - nuxt
+    networks:
+      - frontnet
+
+networks:
+  frontnet:

@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">
-        nuxt_ssl
+        nuxt_ssl 1
       </h1>
       <h2 class="subtitle">
         My astounding Nuxt.js project
